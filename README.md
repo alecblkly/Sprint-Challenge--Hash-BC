@@ -22,6 +22,8 @@ This sprint challenge is divided up into three parts: Hash tables coding, blockc
 
 ## Interview Questions
 
+---
+
 Explain in detail the workings of a dynamic array:
 
 -  What is the runtime complexity to access an array, add or remove from the front, and add or remove from the back?
@@ -34,11 +36,33 @@ Explain in detail the workings of a dynamic array:
 
 > Add or Remove from the back: To add or remove from the back of an array, the runtime complexity would be 0(1).
 
+---
+
 -  What is the worse case scenario if you try to extend the storage size of a dynamic array?
 
-*  Explain how a blockchain is structured. What are the blocks, what is the chain? How is the data organized?
+The worse case scenario for extending storage of a dynamic array is 0(n).
+
+---
+
+-  Explain how a blockchain is structured. What are the blocks, what is the chain? How is the data organized?
+
+   A chain within the blockchain is comprised 5 items, these 5 items together is a `block`:
+
+```
+block = {
+'index': len(self.chain) + 1,
+'timestamp': time(),
+'transactions': self.current_transactions,
+'proof': proof,
+'previous_hash': previous_hash or self.hash(self.last_block)
+}
+```
+
+---
 
 -  Explain how proof of work functions. How does it operate. How does this protect the chain from attack. What kind of attack is possible?
+
+Proof of work is confirming that the proof is valid for transactions within the block, both client and server confirm `x == x` for validation. It is utilizing hashing for security.
 
 ## Project Set Up
 
