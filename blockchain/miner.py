@@ -26,7 +26,6 @@ def proof_of_work(last_proof):
     print("Searching for next proof")
     prev = f'{last_proof}'.encode()
     prev_hash = hashlib.sha256(prev).hexdigest()
-    # block_string = json.dumps(last_proof, sort_keys=True)
 
     proof = random.randint(100, 1000000000)
 
