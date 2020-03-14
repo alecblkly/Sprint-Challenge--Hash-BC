@@ -24,11 +24,13 @@ def proof_of_work(last_proof):
     start = timer()
 
     print("Searching for next proof")
-    block_string = json.dumps(last_proof, sort_keys=True)
+    prev = f'{last_proof}'.encode()
+    prev_hash = hashlib.sha256(prev).hexdigest()
+    # block_string = json.dumps(last_proof, sort_keys=True)
 
     proof = random.randint(100, 1000000000)
 
-    while valid_proof(block_string, proof) is False:
+    while valid_proof(prev_hash, proof) is False:
         proof += 1
 
     print("Proof found: " + str(proof) + " in " + str(timer() - start))
