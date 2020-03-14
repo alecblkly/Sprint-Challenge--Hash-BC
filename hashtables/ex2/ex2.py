@@ -28,4 +28,24 @@ def reconstruct_trip(tickets, length):
     # Insert is looking for hash_table, key, and value
     # Retrieve is looking hash_table and key
 
-    pass
+    # Want to be able to access key/value of source/destination
+    for i in tickets:
+        hash_table_insert(hashtable, i.source, i.destination)
+    # Retrieve would be looking for hash_table_retrieve(hashtable, key)
+    # If we are looking for the key of none, would place destination at route[i]
+    # If key is not none, destination would be route[i - 1]?
+    for i in range(length):
+        # route[i] is None cannot be iterated over
+        if route[i] is not None:
+            # Current issue with this if statement as with printing,
+            # it jumps right over to the else
+            # Commented out print statement, not being printed
+            # print("Route not None: ", route)
+            hash_table_retrieve(hashtable, route[i - 1])
+        else:
+            # Code is jumping straight to the else statement
+            # print("Route: ", route)
+            hash_table_retrieve(hashtable, 'NONE')
+            # Returning list of none equal to the amount of items supposed to be within the list
+            # None is not being evaluated properly
+        return route[1:]
