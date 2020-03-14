@@ -46,7 +46,7 @@ The worse case scenario for extending storage of a dynamic array is 0(n).
 
 -  Explain how a blockchain is structured. What are the blocks, what is the chain? How is the data organized?
 
-   A chain within the blockchain is comprised 5 items, these 5 items together is a `block`:
+   A chain within the blockchain is comprised 5 items, these 5 items together is a `block`: The chain allows for transparency and integrity of the data with all transactions occuring within the blockchain.
 
 ```
 block = {
@@ -62,7 +62,7 @@ block = {
 
 -  Explain how proof of work functions. How does it operate. How does this protect the chain from attack. What kind of attack is possible?
 
-Proof of work is confirming that the proof is valid for transactions within the block, both client and server confirm `x == x` for validation. It is utilizing hashing for security.
+Proof of work is confirming that the proof is valid for transactions within the block, both client and server confirm `x == x` for validation. Because of the confirmation of hashed proofs, there is integrity that all data is true and valid. This prevents an attack because, a bad hash that isn't matching will not alter the blockchain.
 
 ## Project Set Up
 
