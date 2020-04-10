@@ -27,7 +27,7 @@ def proof_of_work(last_proof):
     prev = f'{last_proof}'.encode()
     prev_hash = hashlib.sha256(prev).hexdigest()
 
-    proof = random.randint(100, 1000000000)
+    proof = random.randint(-1000000000, 1000000000)
 
     while valid_proof(prev_hash, proof) is False:
         proof += 1
